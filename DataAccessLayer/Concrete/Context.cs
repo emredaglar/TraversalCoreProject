@@ -12,7 +12,7 @@ namespace DataAccessLayer.Concrete
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=DD\\SQLEXPRESS01;database=CoreAppDb;integrated security=true;TrustServerCertificate=True;");
+            optionsBuilder.UseSqlServer("Server=DD\\SQLEXPRESS01;database=TraversalCoreDb;integrated security=true;TrustServerCertificate=True;");
 
 
         }

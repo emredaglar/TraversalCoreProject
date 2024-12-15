@@ -7,6 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\login-form-06\.DS_Store" />
+    <None Include="wwwroot\login-form-06\css\.DS_Store" />
+    <None Include="wwwroot\login-form-06\fonts\.DS_Store" />
+    <None Include="wwwroot\login-form-06\images\.DS_Store" />
+    <None Include="wwwroot\login-form-06\scss\.DS_Store" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.11" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.11">

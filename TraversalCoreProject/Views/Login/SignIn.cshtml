@@ -1,74 +1,111 @@
-﻿
+﻿@model UserSignInViewModel
 @{
-    Layout = null;
+	Layout = null;
 }
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Login 10</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
-
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
-	<link rel="stylesheet" href="/login-form-20/css/style.css">
-
+	<title>Traversal | Misafir Giriş Ekranı</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="~/Login_v1/images/icons/favicon.ico" />
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="~/Login_v1/vendor/bootstrap/css/bootstrap.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="~/Login_v1/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="~/Login_v1/vendor/animate/animate.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="~/Login_v1/vendor/css-hamburgers/hamburgers.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="~/Login_v1/vendor/select2/select2.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="~/Login_v1/css/util.css">
+	<link rel="stylesheet" type="text/css" href="~/Login_v1/css/main.css">
+	<!--===============================================================================================-->
+	<link href="~/bootstrap/css/bootstrap.css" rel="stylesheet" />
+	<script src="~/lib/jquery/dist/jquery.js"></script>
+	<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+	<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
 </head>
-<body class="img js-fullheight" style="background-image: url(/login-form-20/images/bg.jpg);">
-	<section class="ftco-section">
-		<div class="container">
-			<div class="row justify-content-center">
-				<div class="col-md-6 text-center mb-5">
-					<h2 class="heading-section">Giriş Yap</h2>
+<body>
+
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<div class="login100-pic js-tilt" data-tilt>
+					<img src="~/Login_v1/images/img-01.png" alt="IMG">
 				</div>
-			</div>
-			<div class="row justify-content-center">
-				<div class="col-md-6 col-lg-4">
-					<div class="login-wrap p-0">
-					
-						<form action="#" class="signin-form">
-							<div class="form-group">
-								<input type="text" class="form-control" placeholder="Mail" required>
-							</div>
-							<div class="form-group">
-								<input id="password-field" type="password" class="form-control" placeholder="Şifre" required>
-								<span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
-							</div>
-							<div class="form-group">
-								<button type="submit" class="form-control btn btn-primary submit px-3">Giriş Yap</button>
-							</div>
-							<div class="form-group d-md-flex">
-								<div class="w-50">
-									<label class="checkbox-wrap checkbox-primary">
-										Beni Hatırla
-										<input type="checkbox" checked>
-										<span class="checkmark"></span>
-									</label>
-								</div>
-								<div class="w-50 text-md-right">
-									<a href="#" style="color: #fff">Şifremi Unuttum</a>
-								</div>
-							</div>
-						</form>
-						<p class="w-100 text-center">&mdash; Giriş Yap &mdash;</p>
-						<div class="social d-flex text-center">
-							<a href="#" class="px-2 py-2 mr-md-1 rounded"><span class="ion-logo-facebook mr-2"></span> Facebook</a>
-							<a href="#" class="px-2 py-2 ml-md-1 rounded"><span class="ion-logo-twitter mr-2"></span> Twitter</a>
-						</div>
-					    <a href="/Login/SignUp"> Bir Hesabınız Yok Mu?</a> 
+
+				<form class="login100-form validate-form" method="post">
+					<span class="login100-form-title">
+						Misafir Giriş Sayfası
+					</span>
+
+					<div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+						<input class="input100" type="text" asp-for="UserName" placeholder="Kullanıcı Adı">
+						<span asp-validation-for="UserName" style="color: #ff0000"></span>
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-envelope" aria-hidden="true"></i>
+						</span>
 					</div>
-				</div>
+
+					<div class="wrap-input100 validate-input" data-validate="Password is required">
+						<input class="input100" type="password" asp-for="Password" placeholder="Şifre">
+						<span asp-validation-for="Password" style="color: #ff0000"></span>
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-lock" aria-hidden="true"></i>
+						</span>
+					</div>
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn">
+							Giriş Yap
+						</button>
+					</div>
+
+					<div class="text-center p-t-12">
+						<a class="txt2" href="#">
+						<span class="txt1">
+							Şifremi Unuttum
+						</span>
+						
+						
+						</a>
+					</div>
+
+					<div class="text-center p-t-136">
+						<a class="txt2" href="/Login/SignUp">
+							Bir Hesabınız Yok Mu?
+							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+						</a>
+					</div>
+				</form>
 			</div>
 		</div>
-	</section>
+	</div>
 
-	<script src="/login-form-20/js/jquery.min.js"></script>
-	<script src="/login-form-20/js/popper.js"></script>
-	<script src="/login-form-20/js/bootstrap.min.js"></script>
-	<script src="/login-form-20/js/main.js"></script>
+
+
+
+	<!--===============================================================================================-->
+	<script src="~/Login_v1/vendor/jquery/jquery-3.2.1.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="~/Login_v1/vendor/bootstrap/js/popper.js"></script>
+	<script src="~/Login_v1/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="~/Login_v1/vendor/select2/select2.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="~/Login_v1/vendor/tilt/tilt.jquery.min.js"></script>
+	<script>
+		$('.js-tilt').tilt({
+			scale: 1.1
+		})
+	</script>
+	<!--===============================================================================================-->
+	<script src="~/Login_v1/js/main.js"></script>
 
 </body>
 </html>
-

@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Concrete
 {
-    public class CommetManager : ICommentService
+    public class CommentManager : ICommentService
     {
         ICommentDal _commentDal;
 
-        public CommetManager(ICommentDal commentDal)
+        public CommentManager(ICommentDal commentDal)
         {
             _commentDal = commentDal;
         }
@@ -47,5 +47,10 @@ namespace BusinessLayer.Concrete
         {
             throw new NotImplementedException();
         }
-    }
+
+		public List<Comment> TGetListCommentWithDestination()
+		{
+			return _commentDal.GetListCommentWithDestination();
+		}
+	}
 }

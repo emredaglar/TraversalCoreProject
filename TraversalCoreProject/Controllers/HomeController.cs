@@ -15,15 +15,24 @@ namespace TraversalCoreProject.Controllers
 
         public IActionResult Index()
         {
+            _logger.LogInformation("Index Sayfasý Çaðýrýldý.");
             return View();
         }
 
         public IActionResult Privacy()
         {
-            return View();
+			DateTime date = Convert.ToDateTime(DateTime.Now.ToLongDateString());
+			_logger.LogInformation(date + "Privacy sayfasý çaðýrýldý");
+			return View();
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+		public IActionResult Test()
+		{
+			_logger.LogInformation("Test Sayfasý Çaðýrýldý.");
+			return View();
+		}
+
+		[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });

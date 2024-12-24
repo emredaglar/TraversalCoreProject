@@ -17,6 +17,7 @@ builder.Services.AddIdentity<AppUser, AppRole>()
 	.AddEntityFrameworkStores<Context>()
 	.AddErrorDescriber<CustomIdentityValidator>();
 
+
 Extensions.ContainerDependencies(builder.Services);
 
 builder.Services.AddMvc(config =>
@@ -26,10 +27,17 @@ builder.Services.AddMvc(config =>
 		.Build();
 	config.Filters.Add(new AuthorizeFilter(policy));
 });
-
+//Loglama----------------------
+builder.Services.AddLogging(log =>
+{
+	log.ClearProviders();
+	log.AddFile($"{Directory.GetCurrentDirectory()}\\LogFile\\log.txt", LogLevel.Error);
+});
+//Loglama----------------------
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
@@ -41,6 +49,7 @@ else
 {
 	app.UseDeveloperExceptionPage();
 }
+
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();

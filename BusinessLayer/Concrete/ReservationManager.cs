@@ -18,7 +18,17 @@ namespace BusinessLayer.Concrete
 			_reservationDal = reservationDal;
 		}
 
-		public void TAdd(Reservation entity)
+        public List<Reservation> TGetListWithReservationByWaitApproval(int id)
+        {
+		 return	_reservationDal.GetListWithReservationByWaitApproval(id);
+        }
+
+        //public List<Reservation> GetListApprovalReservation(int id)
+        //{
+        //    return _reservationDal.GetListByFilter(x=>x.AppUserId == id && x.Status=="Onay Bekliyor");
+        //}
+
+        public void TAdd(Reservation entity)
 		{
 			_reservationDal.Insert(entity);
 		}
@@ -43,5 +53,15 @@ namespace BusinessLayer.Concrete
 		{
 			throw new NotImplementedException();
 		}
-	}
+
+        public List<Reservation> TGetListWithReservationByAccepted(int id)
+        {
+			return _reservationDal.GetListWithReservationByAccepted(id);
+        }
+
+        public List<Reservation> TGetListWithReservationByPrevios(int id)
+        {
+			return _reservationDal.GetListWithReservationByPrevios(id);
+        }
+    }
 }

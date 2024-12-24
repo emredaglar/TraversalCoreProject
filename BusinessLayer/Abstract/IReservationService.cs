@@ -7,12 +7,13 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Abstract
 {
-    public interface IReservationService : IGenericService<Reservation>
-    {
-      //List<Reservation> GetListApprovalReservation(int id);
-      List<Reservation> TGetListWithReservationByWaitApproval(int id);
-      List<Reservation> TGetListWithReservationByAccepted(int id);
-      List<Reservation> TGetListWithReservationByPrevios(int id);
+	public interface IReservationService : IGenericService<Reservation>
+	{
+		//List<Reservation> GetListApprovalReservation(int id);
+		List<Reservation> TGetListWithReservationByWaitApproval(int id);
+		List<Reservation> TGetListWithReservationByAccepted(int id);
+		List<Reservation> TGetListWithReservationByPrevios(int id);
+		List<Reservation> TGetListWithAppUser(int id);
 
 	}
 }

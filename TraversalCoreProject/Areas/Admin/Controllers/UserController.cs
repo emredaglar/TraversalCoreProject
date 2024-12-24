@@ -9,10 +9,12 @@ namespace TraversalCoreProject.Areas.Admin.Controllers
 	public class UserController : Controller
 	{
 		private readonly IAppUserService _appUserService;
+		private readonly IReservationService _reservationService;
 
-		public UserController(IAppUserService appUserService)
+		public UserController(IAppUserService appUserService, IReservationService reservationService)
 		{
 			_appUserService = appUserService;
+			_reservationService = reservationService;
 		}
 
 		public IActionResult Index()
@@ -24,7 +26,7 @@ namespace TraversalCoreProject.Areas.Admin.Controllers
 		{
 			var values = _appUserService.TGetById(id);
 			_appUserService.TDelete(values);
-			return RedirectToAction("Index",);
+			return RedirectToAction("Index");
 		}
 		[HttpGet]
 		public IActionResult EditUser(int id)
@@ -32,21 +34,21 @@ namespace TraversalCoreProject.Areas.Admin.Controllers
 			var values = _appUserService.TGetById(id);
 			return View(values);
 		}
-        [HttpPost]
-        public IActionResult EditUser(AppUser appUser)
-        {
-			 _appUserService.TUpdate(appUser);
-            return RedirectToAction("Index");
-        }
+		[HttpPost]
+		public IActionResult EditUser(AppUser appUser)
+		{
+			_appUserService.TUpdate(appUser);
+			return RedirectToAction("Index");
+		}
 		public IActionResult CommentUser(int id)
 		{
 			_appUserService.TGetList();
 			return View();
 		}
-        public IActionResult ReservationUser(int id)
-        {
-            _appUserService.TGetList();
-            return View();
-        }
-    }
+		public IActionResult ReservationUser(int id)
+		{
+			var values = _reservationService.TGetListWithAppUser(id);
+			return View(values);
+		}
+	}
 }

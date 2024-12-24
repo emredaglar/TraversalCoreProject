@@ -63,5 +63,10 @@ namespace BusinessLayer.Concrete
         {
 			return _reservationDal.GetListWithReservationByPrevios(id);
         }
-    }
+
+		public List<Reservation> TGetListWithAppUser(int id)
+		{
+			return _reservationDal.GetListWithAppUser(id);
+		}
+	}
 }

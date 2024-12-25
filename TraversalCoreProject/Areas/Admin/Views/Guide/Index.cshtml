@@ -17,6 +17,7 @@
                     <th>Görsel</th>
                     <th>Durum</th>
                     <th>Düzenle</th>
+                    <th>Sil</th>
                 </tr>
             </thead>
             <tbody class="table-border-bottom-0">
@@ -41,14 +42,15 @@
                         @{
                             if (item.Status == true)
                             {
-                                <td><a href="/Admin/Guide/ChangeToPassive/@item.GuideId" class="btn btn-outline-warning">Pasif Yap</a></td>
+                                <td><a href="/Admin/Guide/ChangeToFalse/@item.GuideId" class="btn btn-outline-warning">Pasif Yap</a></td>
                             }
                             else
                             {
-                                <td><a href="/Admin/Guide/ChangeToActive/@item.GuideId" class="btn btn-outline-secondary">Aktif Yap</a></td>
+                                <td><a href="/Admin/Guide/ChangeToTrue/@item.GuideId" class="btn btn-outline-secondary">Aktif Yap</a></td>
                             }
                         }
                         <td><a href="/Admin/Guide/EditGuide/@item.GuideId" class="btn btn-outline-success">Düzenle</a></td>
+                        <td><a href="/Admin/Guide/DeleteGuide/@item.GuideId" class="btn btn-outline-danger">Sil</a></td>
                     </tr>
                 }
             </tbody>

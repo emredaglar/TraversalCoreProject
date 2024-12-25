@@ -61,14 +61,20 @@ namespace TraversalCoreProject.Areas.Admin.Controllers
 			return RedirectToAction("Index");
 		}
 
-		public IActionResult ChangeToActive(int id)
+		public IActionResult ChangeToTrue(int id)
 		{
-
+			_guideService.TChangeToTrueByGuide(id);
 			return RedirectToAction("Index", "Guide", new { area = "Admin" });
 		}
-		public IActionResult ChangeToPassive(int id)
+		public IActionResult ChangeToFalse(int id)
 		{
-
+			_guideService.TChangeToFalseByGuide(id);
+			return RedirectToAction("Index", "Guide", new { area = "Admin" });
+		}
+		public IActionResult DeleteGuide(int id)
+		{
+			var values = _guideService.TGetById(id);
+			_guideService.TDelete(values);
 			return RedirectToAction("Index", "Guide", new { area = "Admin" });
 		}
 	}

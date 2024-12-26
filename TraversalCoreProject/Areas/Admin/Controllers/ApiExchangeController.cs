@@ -24,7 +24,7 @@ namespace TraversalCoreProject.Areas.Admin.Controllers
 				RequestUri = new Uri("https://booking-com.p.rapidapi.com/v1/metadata/exchange-rates?locale=en-gb&currency=TRY"),
 				Headers =
 	{
-		{ "x-rapidapi-key", "8189ffcc04msh89957af40346776p12f8ebjsndc8eef993d4e" },
+		{ "x-rapidapi-key", "3db79cb1e3mshfa9b8dd84816013p1e663fjsn48c308702bf9" },
 		{ "x-rapidapi-host", "booking-com.p.rapidapi.com" },
 	},
 			};

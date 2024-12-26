@@ -1,12 +1,17 @@
 using BusinessLayer.Abstract;
 using BusinessLayer.Concrete;
 using BusinessLayer.Container;
+using BusinessLayer.ValidationRules;
 using DataAccessLayer.Abstract;
 using DataAccessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
+using DTOLayer.DTOs.AnnouncementDTOs;
 using EntityLayer.Concrete;
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Authorization;
+using TraversalCoreProject.Mapping.AutoMapperProfile;
 using TraversalCoreProject.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -17,8 +22,14 @@ builder.Services.AddIdentity<AppUser, AppRole>()
 	.AddEntityFrameworkStores<Context>()
 	.AddErrorDescriber<CustomIdentityValidator>();
 
-
+//Extensions Ekleme----------------------------
 Extensions.ContainerDependencies(builder.Services);
+Extensions.CustomValidator(builder.Services);
+//Extensions Ekleme----------------------------
+
+builder.Services.AddAutoMapper(typeof(MapProfile));
+
+builder.Services.AddControllersWithViews().AddFluentValidation();
 
 builder.Services.AddMvc(config =>
 {

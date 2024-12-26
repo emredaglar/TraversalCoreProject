@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessLayer", "BusinessLa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTOLayer", "DTOLayer\DTOLayer.csproj", "{005A4EB4-D8FE-45DC-B9B0-1A34D4E5D819}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TraversalApiProject", "TraversalApiProject\TraversalApiProject.csproj", "{44AD46DE-C200-4FA5-B4CF-86377A3CCB8A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{005A4EB4-D8FE-45DC-B9B0-1A34D4E5D819}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{005A4EB4-D8FE-45DC-B9B0-1A34D4E5D819}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{005A4EB4-D8FE-45DC-B9B0-1A34D4E5D819}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44AD46DE-C200-4FA5-B4CF-86377A3CCB8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44AD46DE-C200-4FA5-B4CF-86377A3CCB8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44AD46DE-C200-4FA5-B4CF-86377A3CCB8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44AD46DE-C200-4FA5-B4CF-86377A3CCB8A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

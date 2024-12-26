@@ -22,6 +22,8 @@ builder.Services.AddIdentity<AppUser, AppRole>()
 	.AddEntityFrameworkStores<Context>()
 	.AddErrorDescriber<CustomIdentityValidator>();
 
+builder.Services.AddHttpClient();
+
 //Extensions Ekleme----------------------------
 Extensions.ContainerDependencies(builder.Services);
 Extensions.CustomValidator(builder.Services);

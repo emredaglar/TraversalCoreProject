@@ -10,9 +10,11 @@ using DTOLayer.DTOs.AnnouncementDTOs;
 using EntityLayer.Concrete;
 using FluentValidation;
 using FluentValidation.AspNetCore;
+using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Authorization;
 using TraversalCoreProject.CQRS.Handlers.DestinationHandlers;
+using TraversalCoreProject.CQRS.Handlers.GuideHandlers;
 using TraversalCoreProject.Mapping.AutoMapperProfile;
 using TraversalCoreProject.Models;
 
@@ -23,6 +25,9 @@ builder.Services.AddScoped<GetDestionationByIDQueryHandler>();
 builder.Services.AddScoped<CreateDestinationCommandHandler>();
 builder.Services.AddScoped<RemoveDestinationHandler>();
 builder.Services.AddScoped<UpdateDestinationCommandHandler>();
+builder.Services.AddScoped<GetAllGuideHandler>();
+
+builder.Services.AddMediatR(typeof(Program));
 
 // Add services to the container.
 builder.Services.AddDbContext<Context>();

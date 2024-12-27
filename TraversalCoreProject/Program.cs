@@ -20,6 +20,9 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddScoped<GetAllDestinationQueryHandler>();
 builder.Services.AddScoped<GetDestionationByIDQueryHandler>();
+builder.Services.AddScoped<CreateDestinationCommandHandler>();
+builder.Services.AddScoped<RemoveDestinationHandler>();
+builder.Services.AddScoped<UpdateDestinationCommandHandler>();
 
 // Add services to the container.
 builder.Services.AddDbContext<Context>();

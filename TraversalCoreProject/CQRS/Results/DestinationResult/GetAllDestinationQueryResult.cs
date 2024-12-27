@@ -1,5 +1,6 @@
 ﻿namespace TraversalCoreProject.CQRS.Results.DestinationResult
 {
+	//get gibi işlemleri yapacak p tutan
 	public class GetAllDestinationQueryResult
 	{
 		public int id { get; set; }

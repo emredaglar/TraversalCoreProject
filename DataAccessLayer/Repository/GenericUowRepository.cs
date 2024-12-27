@@ -18,6 +18,11 @@ namespace DataAccessLayer.Repository
             _context = context;
         }
 
+        public T GetByID(int id)
+        {
+            return _context.Set<T>().Find(id);
+        }
+
         public void Insert(T entity)
         {
             _context.Add(entity);

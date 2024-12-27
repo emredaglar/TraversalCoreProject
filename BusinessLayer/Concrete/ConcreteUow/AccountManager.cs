@@ -20,6 +20,12 @@ namespace BusinessLayer.Concrete.ConcreteUow
             _uowDal = uowDal;
         }
 
+        public Account TGetByID(int id)
+        {
+          return _accountDal.GetByID(id);
+
+        }
+
         public void TInsert(Account entity)
         {
            _accountDal.Insert(entity);

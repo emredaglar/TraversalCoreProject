@@ -26,7 +26,7 @@ namespace TraversalCoreProject.Controllers
         [HttpGet]
         public async Task<IActionResult> DestinationDetails(int id)
         {
-            var values=destinationManager.TGetById(id);
+            var values=destinationManager.TGetDestinationWithGuide(id);
             ViewBag.i = id;
             ViewBag.destId = id;
             var value =await _userManager.FindByNameAsync(User.Identity.Name);

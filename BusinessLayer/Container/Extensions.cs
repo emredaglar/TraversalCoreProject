@@ -54,8 +54,7 @@ namespace BusinessLayer.Container
 
             services.AddScoped<ICommentService, CommentManager>();
             services.AddScoped<ICommentDal, EfCommentDal>();
-
-        }
+		}
 
         public static void CustomValidator(IServiceCollection services)
         {

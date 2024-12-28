@@ -52,7 +52,10 @@ namespace BusinessLayer.Container
 			services.AddScoped<IAccountDal, EfAccountDal>();
 			services.AddScoped<IUowDal, UowDal>();
 
-		}
+            services.AddScoped<ICommentService, CommentManager>();
+            services.AddScoped<ICommentDal, EfCommentDal>();
+
+        }
 
         public static void CustomValidator(IServiceCollection services)
         {

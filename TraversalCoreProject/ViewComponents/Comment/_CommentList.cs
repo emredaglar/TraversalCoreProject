@@ -9,7 +9,9 @@ namespace TraversalCoreProject.ViewComponents.Comment
         CommentManager commetManager = new CommentManager(new EfCommentDal());
         public IViewComponentResult Invoke(int id)
         {
-            var values = commetManager.TGetDestinationById(id);
+            
+            var values = commetManager.TGetListCommentWithDestinationAndUser(id);
+            ViewBag.commentCount = values.Count();
             return View(values);
         }
     }

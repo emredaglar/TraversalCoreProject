@@ -20,7 +20,7 @@ namespace BusinessLayer.Concrete
 
         public void TAdd(Comment entity)
         {
-            throw new NotImplementedException();
+           _commentDal.Insert(entity);
         }
 
         public void TDelete(Comment entity)
@@ -51,6 +51,11 @@ namespace BusinessLayer.Concrete
 		public List<Comment> TGetListCommentWithDestination()
 		{
 			return _commentDal.GetListCommentWithDestination();
+		}
+
+		public List<Comment> TGetListCommentWithDestinationAndUser(int id)
+		{
+			return _commentDal.GetListCommentWithDestinationAndUser(id);
 		}
 	}
 }

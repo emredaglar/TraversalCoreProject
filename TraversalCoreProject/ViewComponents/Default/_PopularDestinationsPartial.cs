@@ -11,7 +11,7 @@ namespace TraversalCoreProject.ViewComponents.Default
 
 		public IViewComponentResult Invoke()
         {
-            var values = destinationManager.TGetList().Take(8).ToList();
+            var values = destinationManager.TGetList().Take(6).ToList();
             return View(values);
         }
     }

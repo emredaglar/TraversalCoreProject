@@ -8,7 +8,7 @@
         <div class="media mt-4">
 
             <div class="img-circle">
-              @*   <img src="@item.ImageUrl" class="img-fluid" alt="..." style="width:100px; height:100px;"> *@
+                <img src="@item.AppUser.ImageUrl" class="img-fluid" alt="..." style="width:100px; height:100px;">
 
             </div>
 
@@ -16,7 +16,7 @@
 
                 <ul class="time-rply mb-2">
                     <li>
-                        <a href="#URL" class="name mt-0 mb-2 d-block">@item.CommentUser</a>
+                        <a href="#URL" class="name mt-0 mb-2 d-block">@item.AppUser.Name @item.AppUser.Surname</a>
                         @(((DateTime)item.CommentDate).ToShortDateString())
                     </li>
                 </ul>

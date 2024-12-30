@@ -3,6 +3,7 @@ using BusinessLayer.Abstract;
 using DTOLayer.DTOs.AnnouncementDTOs;
 using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.BlazorIdentity.Shared;
 using TraversalCoreProject.Areas.Admin.Models;
 
 namespace TraversalCoreProject.Areas.Admin.Controllers
@@ -35,7 +36,7 @@ namespace TraversalCoreProject.Areas.Admin.Controllers
 			//	announcementListViewModel.Content = item.Content;	
 			//	model.Add(announcementListViewModel);
 			//}
-
+			
 			//3
 			var values = _mapper.Map<List<AnnouncementListDTO>>(_announcementService.TGetList());
 			return View(values);

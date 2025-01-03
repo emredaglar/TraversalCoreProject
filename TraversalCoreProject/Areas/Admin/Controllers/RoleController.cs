@@ -50,5 +50,24 @@ namespace TraversalCoreProject.Areas.Admin.Controllers
 			await _roleManager.DeleteAsync(value);
 			return RedirectToAction("Index");
 		}
+		[HttpGet]
+		public IActionResult UpdateRole(int id)
+		{
+			var value = _roleManager.Roles.FirstOrDefault(y => y.Id == id);
+			UpdateRoleViewModel updateRoleViewModel = new UpdateRoleViewModel
+			{
+				RoleId = value.Id,
+				RoleName = value.Name
+			};
+			return View(updateRoleViewModel);
+		}
+		[HttpPost]
+		public async Task<IActionResult> UpdateRole(UpdateRoleViewModel updateRoleViewModel)
+		{
+			var value = _roleManager.Roles.FirstOrDefault(y => y.Id == updateRoleViewModel.RoleId);
+			value.Name = updateRoleViewModel.RoleName;
+			await _roleManager.UpdateAsync(value);
+			return RedirectToAction("Index");
+		}
 	}
 }

@@ -13,6 +13,7 @@ using FluentValidation.AspNetCore;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Authorization;
+using Microsoft.AspNetCore.Mvc.Razor;
 using TraversalCoreProject.CQRS.Handlers.DestinationHandlers;
 using TraversalCoreProject.CQRS.Handlers.GuideHandlers;
 using TraversalCoreProject.Mapping.AutoMapperProfile;
@@ -53,6 +54,12 @@ builder.Services.AddMvc(config =>
 		.Build();
 	config.Filters.Add(new AuthorizeFilter(policy));
 });
+
+builder.Services.AddLocalization(opt =>
+{
+	opt.ResourcesPath = "Resources";
+});
+builder.Services.AddMvc().AddMvcLocalization(LanguageViewLocationExpanderFormat.Suffix).AddDataAnnotationsLocalization();
 builder.Services.ConfigureApplicationCookie(options =>
 {
 	options.LoginPath = "/Login/SignIn/";
@@ -87,7 +94,9 @@ app.UseStaticFiles();
 app.UseAuthentication();
 app.UseRouting();
 app.UseAuthorization();
-
+var suppertedCultures = new[] { "en", "fr", "es", "gr", "tr", "de" };
+var localizationOptions=new RequestLocalizationOptions().SetDefaultCulture(suppertedCultures[4]).AddSupportedCultures(suppertedCultures).AddSupportedUICultures(suppertedCultures);
+app.UseRequestLocalization(localizationOptions);
 // Area ve Default Route sýrasý önemli!
 app.UseEndpoints(endpoints =>
 {

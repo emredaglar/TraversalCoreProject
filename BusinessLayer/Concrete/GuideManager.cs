@@ -53,5 +53,9 @@ namespace BusinessLayer.Concrete
 		{
 			_guideDal.Update(entity);
 		}
+		public List<Guide> TGetListWithDestinations()
+		{
+			return _guideDal.GetListWithDestinations();
+		}
 	}
 }

@@ -68,5 +68,33 @@ namespace BusinessLayer.Concrete
 		{
 			return _reservationDal.GetListWithAppUser(id);
 		}
+		public List<Reservation> GetListWithReservationByCancel(int id)
+		{
+			return _reservationDal.GetListWithReservationByCancel(id);
+		}
+
+		public List<Reservation> GetListWithReservationByWaitAccepted(int id)
+		{
+			return _reservationDal.GetListWithReservationByWaitAccepted(id);
+		}
+
+		public List<Reservation> GetListWithReservationByWaitApproval(int id)
+		{
+			return _reservationDal.GetListWithReservationByWaitApproval(id);
+		}
+
+		public List<Reservation> GetListWithReservationByWaitPrevious(int id)
+		{
+			return _reservationDal.GetListWithReservationByWaitPrevious(id);
+		}
+		public List<Reservation> TGetReservations()
+		{
+			return _reservationDal.GetReservations();
+		}
+
+		public void TSetReservationStatus(int reservationId, string status)
+		{
+			_reservationDal.SetReservationStatus(reservationId, status);
+		}
 	}
 }

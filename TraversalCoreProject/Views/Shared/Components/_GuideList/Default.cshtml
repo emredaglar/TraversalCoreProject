@@ -36,6 +36,11 @@
                                @item.Name
 
                             </span>
+                            <ul class="list-unstyled users-list m-0 float-right">
+                                <li data-toggle="tooltip" data-popup="tooltip-custom" data-original-title="@item.Destinations.FirstOrDefault()?.City" class="avatar avatar-sm pull-up">
+                                    <img class="media-object custom-image-size" style="height:40px" src="@item.Destinations.FirstOrDefault()?.Image" alt="Destination Image">
+                                </li>
+                            </ul>
                             <p class="list-group-item-text mb-0">
                                 <span class="blue-grey lighten-2 font-small-3">@item.Description </span>
                             </p>

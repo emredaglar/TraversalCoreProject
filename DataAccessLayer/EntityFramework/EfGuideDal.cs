@@ -30,5 +30,9 @@ namespace DataAccessLayer.EntityFramework
 			values.Status = true;
 			context.SaveChanges();
 		}
+		public List<Guide> GetListWithDestinations()
+		{
+			return context.Guides.Include(g => g.Destinations).ToList();
+		}
 	}
 }

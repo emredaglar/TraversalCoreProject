@@ -67,6 +67,9 @@ Traversal Seyahat, bir seyahat şirketinin işleyişini simüle eden, kullanıc�
 - Validation Rules (Doğrulama Kuralları)
 - Traversal Seyahat Projesi, seyahat sektörü için modern ve kapsamlı bir çözüm sunmaktadır. Detaylar için projeyi inceleyebilirsiniz! 🌟
 
+  ###  📋 Database Diagram
+![34](https://github.com/user-attachments/assets/4cf5e2ea-f523-4fc3-9621-5e1cb728cbcf)
+
   ###  🔑 Login-Register Paneli
   ![0 1](https://github.com/user-attachments/assets/13c429aa-057c-417c-a580-f4a087159712)
   ![0 2](https://github.com/user-attachments/assets/383a9dbb-514c-440e-bbe2-46774bb081d4)
